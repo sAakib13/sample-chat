@@ -147,31 +147,32 @@
     const apiKey = "fgSyM_WPl6odH5iq6R12ZP5oV5D6oPqqQLQe";
 
     // Webhook URL with API key as query parameter
-    const webhookUrl = `https://telerivet.com/p/PJe0a2cdbfbfb12bbb/webhook/SVa95cd951e6c4f7f4?api_key=${apiKey}`;
+    const webhookUrl = `https://api.telerivet.com/v1/projects/PJe0a2cdbfbfb12bbb/services/SV9ef18c6032c405ed/invoke?api_key=${apiKey}`;
 
     // Make a POST request to the webhook URL
     fetch(webhookUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: message,
-      }),
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            message: message
+        })
     })
-      .then((response) => {
+    .then(response => {
         if (!response.ok) {
-          throw new Error("Failed to trigger webhook");
+            throw new Error('Failed to trigger webhook');
         }
         // Reply to the user
         setTimeout(function () {
-          reply("Hello! This is a sample reply.");
+            reply("Hello! This is a sample reply.");
         }, 1000);
-      })
-      .catch((error) => {
-        console.error("Error triggering webhook:", error);
-      });
-  }
+    })
+    .catch(error => {
+        console.error('Error triggering webhook:', error);
+    });
+}
+
 
   // Function to add a reply message
   function reply(message) {
