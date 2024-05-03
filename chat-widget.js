@@ -144,7 +144,8 @@
     chatInput.value = "";
 
     // Make a POST request to the webhook URL
-    const webhookUrl = 'https://telerivet.com/p/PJe0a2cdbfbfb12bbb/webhook/SVa95cd951e6c4f7f4';
+    
+    const webhookUrl = 'https://api.telerivet.com/v1/projects/PJe0a2cdbfbfb12bbb/services/SVa95cd951e6c4f7f4/invoke';
     fetch(webhookUrl, {
         method: 'POST',
         headers: {
